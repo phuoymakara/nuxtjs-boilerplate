@@ -1,0 +1,22 @@
+{
+  "title": "Welcome to TSC",
+  "home": "Home",
+  "increment": "Increment",
+  "decrement": "Decrement",
+  "fullname": "Full Name",
+  "password": "Password",
+  "newsletter": "Send me your newsletter!",
+  "signup": "Signup",
+  "account":{
+    "accountname": "Account",
+    "settings": "Account settings",
+    "support": "Support",
+    "license": "License",
+    "signout": "Signout",
+    "qs_signout": "Are you sure you want to logout from your account?"
+  },
+  "button":{
+    "logout": "Logout",
+    "cancel": "Cancel"
+  }
+}
