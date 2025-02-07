@@ -6,7 +6,7 @@ export default defineNuxtPlugin(() => {
   const accessToken = useCookie("access_token");
 
   const fetchOptions: FetchOptions = {
-    baseURL: "https://dummyjson.com",
+    //baseURL: "https://dummyjson.com",
     method: "GET",
     onRequest: ({ options }) => {
       const defaults: HeadersInit = {
