@@ -6,7 +6,9 @@ type UserLogin={
 
 export const useAuthStore = defineStore("auth", () => {
   const isAuthenticated = ref(false);
-  const cookie = useCookie('tsc:abc')
+  const cookie = useCookie('tsc:abc');
+  const { locale } = useI18n();
+
 
   const login = (data: UserLogin) =>{
     try{
@@ -22,7 +24,7 @@ export const useAuthStore = defineStore("auth", () => {
   const logout = () =>{
     isAuthenticated.value = false;
     cookie.value = null;
-    navigateTo('/login')
+    navigateTo(`${locale.value}/login`)
   }
 
   const middleSet = () =>{
