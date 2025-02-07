@@ -17,7 +17,8 @@
   const handleSave = () =>{
     console.log('SAVE')
     useAuth.logout()
-    navigateTo(`${locale.value}/login`)
+    const lang = locale.value === 'en' ? '' : 'km'
+    navigateTo(`/${lang}/login`)
     isModal.value = false;
   }
   const handleClose = () =>{
