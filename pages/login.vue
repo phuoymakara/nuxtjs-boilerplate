@@ -9,9 +9,10 @@
   const useUser = useUserStore()
 
   const handleLogin = (data:user) =>{
+    const lang = locale.value === 'en' ? '' : 'km'
     useAuth.login(data)
     if(useAuth.isAuthenticated){
-      router.push({ path: `/${locale.value}` })
+      router.push({ path: `/${lang}` })
     }
   }
 </script>
