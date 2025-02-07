@@ -17,6 +17,7 @@
   const handleSave = () =>{
     console.log('SAVE')
     useAuth.logout()
+    navigateTo(`${locale.value}/login`)
     isModal.value = false;
   }
   const handleClose = () =>{
