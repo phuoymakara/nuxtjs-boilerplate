@@ -30,14 +30,14 @@
 </script>
 
 <template>
-  <header class="bg-slate-100 flex justify-end py-4 px-8 gap-x-4 border-b border-gray-200">
+  <header v-if="useAuth.isAuthenticated" class="bg-slate-100 flex justify-end py-4 px-8 gap-x-4 border-b border-gray-200">
     <button  type="button" class="flex gap-x-2 border border-gray-500 px-3 py-1 rounded-md" @click="setLocale(locale === 'en' ? 'km' : 'en')">
       <img v-if="locale==='en'" src="https://cdn-icons-png.flaticon.com/512/14009/14009894.png" width="28" height="20" alt="kh-flag"> 
       <img v-else src="https://cdn-icons-png.flaticon.com/512/330/330425.png" width="28" height="20" alt="kh-flag">
       
       {{ locale === "en" ? "ភាសាខ្មែរ" : "English" }}
     </button>
-    <div v-if="useAuth.isAuthenticated" class="relative inline-block text-left">
+    <div  class="relative inline-block text-left">
       <div>
         <button 
         @click="handleToggleLogout"
@@ -54,6 +54,14 @@
       </div>
     </div>
   </header>
+  <div v-else class="flex justify-end md:p-8 lg:p-8 p-4">
+    <button  type="button" class="flex gap-x-2 border border-gray-500 px-3 py-1 rounded-md" @click="setLocale(locale === 'en' ? 'km' : 'en')">
+      <img v-if="locale==='en'" src="https://cdn-icons-png.flaticon.com/512/14009/14009894.png" width="28" height="20" alt="kh-flag"> 
+      <img v-else src="https://cdn-icons-png.flaticon.com/512/330/330425.png" width="28" height="20" alt="kh-flag">
+      
+      {{ locale === "en" ? "ភាសាខ្មែរ" : "English" }}
+    </button>
+  </div>
   <Modal 
     v-model:isModal="isModal"
     @close="handleClose"
